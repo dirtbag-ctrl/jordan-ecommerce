@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/menu %>
+
+  <div class="hero">
+
+    <!--Box for the Form-->
+    <div class="form-box">
+      <!--Form Title-->
+      <div class="form-title">
+        <h2>Sign In</h2>
+      </div>
+
+      <!--- Sign In Form-->
+      <form action="/signIn" method="POST" class="input-group" id="login">
+        <input type="email" name="email" class="input-field" placeholder="Email">
+        <input type="password" name="password" class="input-field" placeholder="Enter Password">
+        <input type="checkbox" class="check-box"><span>Remember Password</span>
+        <button type="submit" class="submit-btn">Submit</button>
+        <!-- Route to Register Form-->
+        <a href="/register" id="signIn">Dont have an account?</a>
+      </form>
+    </div>
+
+  </div>
+
+</body>
+<% include partials/script %>
+
+</html>

@@ -1,0 +1,37 @@
+<!--Shop Page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/menu %>
+
+    <!--Product Cards-->
+    <div class="container">
+        <!-- Traverse through Database data-->
+        <% productsData.forEach(function(result) { %>
+        <div class="card">
+            <div class="imgBx">
+                <img src="<%= result.imagePath %>" alt="">
+            </div>
+            <div class="contentBox">
+                <h2><%= result.prod_title %></h2>
+                <h3>$<%= result.price %></h3>
+                <div class="size">
+                    <h3>Size :</h3>
+                    <span><%= result.size %></span>
+
+                </div>
+                <a class="add-cart" href="/addToCart/<%= this._id %>">ADD TO CART</a>
+            </div>
+        </div>
+        <% }); %>
+
+    </div>
+</body>
+<% include partials/script %>
+
+</html>

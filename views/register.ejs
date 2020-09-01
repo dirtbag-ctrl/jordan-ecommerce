@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/menu %>
+
+  <!--If erros exisst in user input field throw errors-->
+  <% if (locals.errors) { %>
+  <div class="alert-message">
+    <ul>
+      <% Object.values(errors).forEach(function(error){ %>
+      <li><%= error.msg %></li>
+      <% }); %>
+    </ul>
+  </div>
+  <% } %>
+
+  <div class="hero">
+    <!--Box for the Form-->
+    <div class="form-box">
+      <!--Form title-->
+      <div class="form-title">
+        <h2>Sign Up</h2>
+      </div>
+
+
+      <!--- Sign Up Form-->
+      <form action="/register" method="POST" class="input-group" id="register">
+        <input type="email" name="email" class="input-field" placeholder="Email">
+        <input type="text" name="firstName" class="input-field" placeholder="First Name">
+        <input type="password" name="password" class="input-field" placeholder="Enter Password">
+        <input type="checkbox" class="check-box"><span>I agree to terms & conditions.</span>
+        <button type="submit" class="submit-btn">Submit</button>
+        <!--- Route to Sign In-->
+        <a href="/signIn" id="signUp">Have an account?</a>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+<% include partials/script %>
+
+</html>
